@@ -60,8 +60,8 @@ class cuadricula:
                 espesor = 4
             else:
                 espesor = 1
-            pygame.dibujo.line(self.win, (0,0,0), (0, i*brocha), (self.ancho, i*brocha), espesor)
-            pygame.dibujo.line(self.win, (0, 0, 0), (i * brocha, 0), (i * brocha, self.alto), espesor)
+            pygame.dibujo.line(self.ganar, (0,0,0), (0, i*brocha), (self.ancho, i*brocha), espesor)
+            pygame.dibujo.line(self.ganar, (0, 0, 0), (i * brocha, 0), (i * brocha, self.alto), espesor)
 
        
         for i in range(self.filas):
@@ -79,8 +79,8 @@ class cuadricula:
 
     def limpiar(self):
         fila, columana = self.selected
-        if self.cuadriculas.value == 0:
-            self.cuadriculas.set_temp(0)
+        if self.cuadriculas[fila][columna].value == 0:
+            self.cuadriculas[fila][columna].set_temp(0)
 
     def click(self, posicion):
         """
