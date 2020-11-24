@@ -71,14 +71,14 @@ class cuadricula:
     def selecccion(self, fila, columna):
         
         for i in range(self.filas):
-            for j in range(self.columnass):
+            for j in range(self.columnas):
                 self.cuadriculas[i][j].selected = False
 
         self.cuadriculas.selected = True
         self.selected = (fila, columna)
 
     def limpiar(self):
-        fila, columana = self.selected
+        fila, columna = self.selected
         if self.cuadriculas[fila][columna].value == 0:
             self.cuadriculas[fila][columna].set_temp(0)
 
@@ -88,9 +88,9 @@ class cuadricula:
         :return: (fila, columna)
         """
         if posicion[0] < self.ancho and posicion[1] < self.alto:
-            gap = self.ancho / 9
-            x = posicion[0] // gap
-            y = posicion[1] // gap
+            brocha = self.ancho / 9
+            x = posicion[0] // brocha
+            y = posicion[1] // brocha
             return (int(y),int(x))
         else:
             return None
